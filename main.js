@@ -7,7 +7,12 @@ function selectValue(e){
     if(input.includes('.') && e.innerText === '.'){ //if there is already a decimal point included, cannot add anymore decimal
         return;
     }
-    if(!operators.includes(e.innerText) && e.innerText != '='){ //if the button is not an operator and its not equal
+    if(!operators.includes(e.innerText) && e.innerText != '='){ //if the button is not an operator and its not equal, so basically if its a number
+        if(input === '0'){ //if my first digit is 0 i cannot add anymore numbers behind, next value i press will be displayed
+            input = e.innerText;
+            displayValue(input);
+            return; 
+        }
         input += e.innerText;
         displayValue(input);
     }
@@ -47,4 +52,5 @@ const operate = (x,y,z) => { //x and y are the operands. z is the operator
             break;
     }
     displayValue(result);
+    input = String(result); //store the result in input
 }

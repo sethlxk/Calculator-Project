@@ -32,6 +32,7 @@ body {
     text-align: end;
     padding-right: 20px;
     font-size: 3rem;
+    overflow: scroll;
 }
 
 .zero {
