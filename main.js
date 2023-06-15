@@ -29,7 +29,7 @@ function displayValue(e){
 
 
 const operate = (x,y,z) => { //x and y are the operands. z is the operator
-    x = parseFloat(x);
+    x = parseFloat(x); 
     y = parseFloat(y);
     let result;
     switch(z) {
